@@ -3,7 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iframe Example</title>
+    <title>iframe but with color now :)</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
     <iframe></iframe>
@@ -12,6 +25,7 @@
         const nextQueryValue = !location.search ? 1 :
             Number(location.search.split("?").pop()) + 1;
 
+        document.body.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
         iframeEl.src = `index.html?${nextQueryValue}`;
     </script>
 </body>
