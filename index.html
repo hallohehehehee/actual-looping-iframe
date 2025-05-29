@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Example</title>
+</head>
+<body>
+    <iframe></iframe>
+    <script>
+        const iframeEl = document.querySelector('iframe');
+        const nextQueryValue = !location.search ? 1 :
+            Number(location.search.split("?").pop()) + 1;
+
+        iframeEl.src = `index.html?${nextQueryValue}`;
+    </script>
+</body>
+</html>
